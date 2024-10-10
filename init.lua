@@ -147,14 +147,14 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.list = false
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
@@ -188,7 +188,7 @@ vim.keymap.set('t', '<A-w>', [[<C-\><C-n><C-w>w]])
 vim.keymap.set({ 'n', 'v' }, '<A-w>', [[<C-w>]])
 vim.keymap.set({ 'n', 'v' }, '<leader>q', '<cmd>:q<CR>')
 vim.keymap.set({ 'n', 'v' }, '<leader>fq', '<cmd>:qall!<CR>')
-vim.keymap.set('t', '<A-q>', '<cmd>:q<CR>')
+vim.keymap.set('t', '<leader>q', '<cmd>:q<CR>')
 vim.keymap.set({ 'n', 'v' }, '<A-q>', '<cmd>:BufferClose<CR>')
 vim.keymap.set('n', '<A-d>', [[<C-d>]])
 vim.keymap.set('n', '<A-r>', [[<C-^>]])
@@ -904,8 +904,10 @@ require('lazy').setup({
                 StatusLineTerm = { bg = '#262626', fg = '#8787aa' },
                 StatusLineTermNC = { bg = '#262626', fg = '#8787aa' },
                 FzfLuaPreviewTitle = { bg = 'none' },
-                NormalFloat = { bg = 'none' },
+                -- NormalFloat = { bg = 'none' },
                 NormalNC = { bg = 'none' },
+                NormalFloat = { bg = '#272627' },
+                IncSearch = { bg = '#f9bba5' },
             },
         },
         config = function(_, opts)
